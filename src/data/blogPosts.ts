@@ -1,3 +1,6 @@
+import dataVisualization from '../content/blog-posts/data-visualization-word-cloud.md?raw';
+//import testingReact from '../content/blog-posts/introduction-to-testing-react.md?raw';
+
 export const blogPosts = [
   {
     id: 1,
@@ -5,8 +8,20 @@ export const blogPosts = [
     excerpt: 'Learn how to create engaging word clouds using Python and React for effective data visualization.',
     date: 'March 15, 2024',
     author: 'Jemin Shrestha',
-    image: 'public/images/test.PNG',
-    slug: 'data-visualization-word-cloud'
+    image: '/images/wc.png',
+    slug: 'data-visualization-word-cloud',
+    content: dataVisualization
   },
-  // Add more blog posts here
+  /*
+  {
+    id: 2,
+    title: 'Introduction to Testing React Applications',
+    excerpt: 'A comprehensive guide to testing React applications using modern testing tools and best practices.',
+    date: 'March 20, 2024',
+    author: 'Jemin Shrestha',
+    image: '/images/test.PNG',
+    slug: 'introduction-to-testing-react',
+    content: testingReact
+  }
+    */
 ]; 

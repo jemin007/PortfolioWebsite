@@ -2,7 +2,7 @@
 title: Creating Interactive Word Clouds for Data Visualization
 date: 2024-03-15
 author: Jemin Shrestha
-coverImage: /images/test.png
+coverImage: /images/wc.png
 
 ---
 
@@ -17,7 +17,7 @@ Word clouds can help you:
 - Engage your audience with interactive visualizations
 - Summarize large text documents at a glance
 
-![Word Cloud Visualization](/images/test.png)
+![Word Cloud Visualization](/images/wc.png)
 
 ## Creating Word Clouds with Python
 
@@ -146,5 +146,3 @@ When creating word clouds, keep these tips in mind:
 Word clouds are a powerful tool for data visualization that can make your data more engaging and accessible. Whether you're using Python for static visualizations or React for interactive web applications, word clouds can help you communicate your data story effectively.
 
 Remember to consider your audience and use case when designing your word cloud. The most effective visualizations are those that balance aesthetic appeal with clear communication of the underlying data.
-
-Happy coding! 🚀 

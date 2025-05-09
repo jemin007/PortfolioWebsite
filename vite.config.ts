@@ -4,6 +4,7 @@ import { nodePolyfills } from 'vite-plugin-node-polyfills';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/',
   plugins: [
     react(),
     nodePolyfills({
@@ -13,7 +14,14 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-  assetsInclude: ['**/*.md'],
+  assetsInclude: ['**/*.md', '**/*.PNG', '**/*.png', '**/*.jpg', '**/*.jpeg'],
+  build: {
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name].[ext]'
+      }
+    }
+  },
   server: {
     watch: {
       usePolling: true,

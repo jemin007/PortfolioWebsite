@@ -4,6 +4,7 @@ import { Highlight, themes } from 'prism-react-renderer';
 import { useEffect, useState } from 'react';
 import matter from 'gray-matter';
 import { ArrowLeft } from 'lucide-react';
+import { blogPosts } from '../data/blogPosts';
 
 interface BlogPostData {
   content: string;
@@ -32,30 +33,18 @@ const BlogPost = () => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
     
-    const fetchPost = async () => {
+    const loadPost = () => {
       if (!slug) return;
 
       try {
-        console.log('Fetching post with slug:', slug);
-        const response = await fetch(`/blog-posts/${slug}.md`);
+        const blogPost = blogPosts.find(post => post.slug === slug);
         
-        if (!response.ok) {
-          throw new Error(`Failed to fetch post: ${response.status} ${response.statusText}`);
-        }
-        
-        const text = await response.text();
-        console.log('Received markdown content length:', text.length);
-        
-        let parsed;
-        try {
-          parsed = matter(text);
-        } catch (e) {
-          console.error('Error parsing markdown:', e);
-          throw new Error('Failed to parse markdown content');
+        if (!blogPost) {
+          throw new Error('Blog post not found');
         }
 
+        const parsed = matter(blogPost.content);
         const { data, content } = parsed;
-        console.log('Parsed frontmatter:', data);
         
         if (!data.title || !data.date || !data.author) {
           throw new Error('Missing required frontmatter fields (title, date, or author)');
@@ -80,7 +69,7 @@ const BlogPost = () => {
       }
     };
 
-    fetchPost();
+    loadPost();
   }, [slug]);
 
   if (loading) {
