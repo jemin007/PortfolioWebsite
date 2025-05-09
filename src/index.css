@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-gray-800 dark:text-gray-200;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-[90rem];
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-6 text-center text-gray-800 dark:text-white;
+  }
+
+  .section-subtitle {
+    @apply text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-6xl mx-auto mb-12 text-center;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition-colors duration-300 inline-flex items-center;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-800 dark:text-white font-medium rounded-md transition-colors duration-300 inline-flex items-center;
+  }
+
+  .card {
+    @apply bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300;
+  }
+
+  .nav-link {
+    @apply text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-300;
+  }
+
+  .typing-cursor::after {
+    content: '|';
+    @apply animate-pulse;
+  }
+
+  .section-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234299e1' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.animate-beat {
+  animation: beat 2s infinite;
+}
+
+.prose pre {
+  background: rgba(15, 13, 13, 0.85) !important; /* Light background */
+  color: #222 !important;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+.dark .prose pre {
+  background: rgba(30,41,59,0.85) !important; /* Softer dark background */
+  color: #fff !important;
+}
