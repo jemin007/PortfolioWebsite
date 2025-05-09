@@ -1,7 +1,7 @@
 ---
 title: Introduction to Testing in React JS with Typescript
 date: 2024-12-08
-author: Sahil Verma
+author: Jemin Shrestha
 coverImage: /images/testing-react.jpg
 ---
 
